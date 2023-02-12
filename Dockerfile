@@ -71,7 +71,7 @@ ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
 RUN wget https://imagemagick.org/archive/ImageMagick.tar.gz
 RUN tar xvzf ImageMagick.tar.gz
-RUN cd ImageMagick-7.1.0-45/
+RUN cd ImageMagick-7.1.0-61/
 RUN ./configure 
 RUN make
 RUN make install 
