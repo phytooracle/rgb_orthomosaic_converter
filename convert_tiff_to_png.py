@@ -42,7 +42,7 @@ def main():
 
     args = get_args()
     png_file_name = args.tiff_file.replace('.tif', '.png')
-    sp.call(f'convert {args.tiff_file} -resize {args.resize}x{args.resize}^ {png_file_name}', shell=True)
+    sp.call(f'convert {args.tiff_file} -resize {args.resize}x{args.resize}^ -auto-level -contrast {png_file_name}', shell=True)
 
 
 # --------------------------------------------------
