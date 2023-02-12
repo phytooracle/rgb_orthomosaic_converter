@@ -69,12 +69,12 @@ RUN export C_INCLUDE_PATH=/usr/include/gdal
 RUN apt-get install -y locales && locale-gen en_US.UTF-8
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
-RUN wget https://imagemagick.org/archive/ImageMagick.tar.gz
-RUN tar xvzf ImageMagick.tar.gz
-RUN cd ImageMagick-7.1.0-61/
-RUN ./configure 
-RUN make
-RUN make install 
-RUN ldconfig /usr/local/lib
+RUN wget https://imagemagick.org/archive/ImageMagick.tar.gz \ 
+    && tar xvzf ImageMagick.tar.gz \
+    && cd ImageMagick-7.1.0-61/ \
+    && ./configure \
+    && make \
+    && make install \ 
+    && ldconfig /usr/local/lib
 
 ENTRYPOINT [ "/usr/local/bin/python3.7", "/opt/convert_tiff_to_png.py" ]
